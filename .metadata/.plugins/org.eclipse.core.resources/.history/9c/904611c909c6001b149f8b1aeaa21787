@@ -1,0 +1,10 @@
+
+public class WrapperExample {
+	void wrapper() {
+		int a = 10;
+		Integer j = Integer.valueOf(a); //converting exlpicity to integer 
+		Integer k = a; //autoboxing
+		System.out.println("a:" + a + "j:" + j + "k:" + k );
+	}
+
+}

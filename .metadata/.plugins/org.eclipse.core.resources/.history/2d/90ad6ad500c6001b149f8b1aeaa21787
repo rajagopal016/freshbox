@@ -1,0 +1,16 @@
+
+public class First {
+	public static void main(String[] args) {
+		System.out.println("HelloWorld!");
+		int a = 1, b=2;
+		System.out.println(a);
+		System.out.println(b);
+		Variables v1 = new Variables();
+		v1.method();
+		//System.out.println(Variables.staticvariable);
+		TypeCasting t1 = new TypeCasting();
+		t1.cast();
+	}
+
+}
+

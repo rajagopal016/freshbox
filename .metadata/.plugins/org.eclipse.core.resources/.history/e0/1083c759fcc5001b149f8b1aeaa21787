@@ -1,0 +1,25 @@
+import java.io.*;
+public class Stream {
+	void streamf() {
+		Variables v2 = new Variables();
+		FileOutputStream fout;
+		try {
+			fout = new FileOutputStream("f.txt");
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			ObjectOutputStream out = new ObjectOutputStream(fout);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		out.WriteObject(v2);
+		out.flush();
+		System.out.println("success");
+		
+	}
+
+}
