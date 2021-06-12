@@ -4,7 +4,9 @@ public class ArraysC {
 	
 	public static void main(String[] args) {
 		
-		Scanner s = new Scanner(System.in);
+		TwoD d = new TwoD();
+		d.twodarray();
+		/*Scanner s = new Scanner(System.in);
 		System.out.println("Enter number of elements in the array: ");
 		int n = s.nextInt();
 		int[] array1 = new int[n];
@@ -17,7 +19,7 @@ public class ArraysC {
 			searchindex = searchArray(searchint, array1);
 		}while(searchindex == -1);
 		array1 = deleteElement(searchindex, array1);
-		System.out.println(Arrays.toString(array1));
+		System.out.println(Arrays.toString(array1));*/
 		
 	}
 	
