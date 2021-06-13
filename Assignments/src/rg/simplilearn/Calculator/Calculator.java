@@ -7,26 +7,36 @@ public class Calculator {
 	int operator1;
 	int operator2;
 	double ans;
+	static int count=0;
+	Scanner s = new Scanner(System.in);
 	public static void main(String[] args) {
-		Scanner s = new Scanner(System.in);
+		
 		Calculator c = new Calculator();
+		c.startCalci();
+		Calculator d = new Calculator();
+		d.startCalci();
+	
+	}
+	
+	public void startCalci() {
+		count++;
+		System.out.println("This is count number "+ count);
 		System.out.println("Enter 1 for Add \nEnter 2 for Subtraction \nEnter 3 for Multiplication \nEnter 4 for Division \nEnter 5 for Square Root \nEnter 6 for Percentage");
 		int opt = s.nextInt();
 		DecimalFormat format = new DecimalFormat("0.#");
 		if(opt > 4) {
 			System.out.println("Enter one number for the operation : ");
 			int a = s.nextInt();
-			System.out.println("Answer is : " + format.format(c.chooseOperation(opt, a)));
+			System.out.println("Answer is : " + format.format(chooseOperation(opt, a)));
 		}
 		else {
 			System.out.println("Enter number 'a' for the operation : ");
 			int a = s.nextInt();
 			System.out.println("Enter number 'b' for the operation : ");
 			int b = s.nextInt();
-			System.out.println("Answer is : " + format.format(c.chooseOperation(opt, a, b)));
+			System.out.println("Answer is : " + format.format(chooseOperation(opt, a, b)));
+			System.out.println(" ");
 		}
-		
-
 	}
 	public double chooseOperation(int opt, int a, int b) {
 		
