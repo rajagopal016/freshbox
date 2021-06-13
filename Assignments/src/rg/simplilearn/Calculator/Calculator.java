@@ -4,7 +4,9 @@ import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Calculator {
-
+	int operator1;
+	int operator2;
+	double ans;
 	public static void main(String[] args) {
 		Scanner s = new Scanner(System.in);
 		Calculator c = new Calculator();
@@ -27,30 +29,30 @@ public class Calculator {
 
 	}
 	public double chooseOperation(int opt, int a, int b) {
-		double ans;
-		int operator1;
-		int operator2;
+		
+
 		this.operator1 = a;
+		this.operator2 = b;
 		
 		switch(opt) {
 		case 1:
-			ans = add(a, b);
+			ans = add(operator1, operator2);
 			break;
 		
 		case 2:
-			ans = sub(a, b);
+			ans = sub(operator1, operator2);
 			break;
 		
 		case 3:
-			ans = mul(a, b);
+			ans = mul(operator1, operator2);
 			break;
 		
 		case 4:
-			ans = div(a, b);
+			ans = div(operator1, operator2);
 			break;
 				
 		default:
-			ans = add(a, b);
+			ans = add(operator1, operator2);
 			break;
 			
 		}
@@ -58,20 +60,20 @@ public class Calculator {
 	}
 	
 	public double chooseOperation(int opt, int a) {
-		double ans;
+		this.operator1 = a;
 		switch(opt) {
 		
 		
 		case 5:
-			ans = sqroot(a);
+			ans = sqroot(operator1);
 			break;
 			
 		case 6:
-			ans = percent(a);
+			ans = percent(operator1);
 			break;
 			
 		default:
-			ans = sqroot(a);
+			ans = sqroot(operator1);
 			break;
 		}
 		return ans;
