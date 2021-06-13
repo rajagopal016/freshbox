@@ -7,6 +7,7 @@ public class Calculator {
 	int operator1;
 	int operator2;
 	double ans;
+	final int secretint = 0;
 	static int count=0;
 	Scanner s = new Scanner(System.in);
 	
