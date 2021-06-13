@@ -9,14 +9,6 @@ public class Calculator {
 	double ans;
 	static int count=0;
 	Scanner s = new Scanner(System.in);
-	public static void main(String[] args) {
-		
-		Calculator c = new Calculator();
-		c.startCalci();
-		Calculator d = new Calculator();
-		d.startCalci();
-	
-	}
 	
 	public void startCalci() {
 		count++;
@@ -38,7 +30,7 @@ public class Calculator {
 			System.out.println(" ");
 		}
 	}
-	public double chooseOperation(int opt, int a, int b) {
+	private double chooseOperation(int opt, int a, int b) {
 		
 
 		this.operator1 = a;
@@ -69,7 +61,7 @@ public class Calculator {
 		return ans;
 	}
 	
-	public double chooseOperation(int opt, int a) {
+	private double chooseOperation(int opt, int a) {
 		this.operator1 = a;
 		switch(opt) {
 		
@@ -89,25 +81,25 @@ public class Calculator {
 		return ans;
 	}
 	
-	public int add(int a, int b) {
+	private int add(int a, int b) {
 		return(a+b);
 	}
 	
-	public int sub(int a, int b) {
+	private int sub(int a, int b) {
 		return(a-b);
 	}
-	public int mul(int a, int b) {
+	private int mul(int a, int b) {
 		return(a*b);
 	}
 	
-	public double div(int a, int b) {
+	private double div(int a, int b) {
 		return((double)a/b);
 	}
-	public double percent(int a) {
+	private double percent(int a) {
 		return((double)a/100);
 	}
 	
-	public double sqroot(int a) {
+	private double sqroot(int a) {
 		return(Math.sqrt(a));
 	}
 }
