@@ -28,8 +28,11 @@ public class Calculator {
 	}
 	public double chooseOperation(int opt, int a, int b) {
 		double ans;
-		switch(opt) {
+		int operator1;
+		int operator2;
+		this.operator1 = a;
 		
+		switch(opt) {
 		case 1:
 			ans = add(a, b);
 			break;
