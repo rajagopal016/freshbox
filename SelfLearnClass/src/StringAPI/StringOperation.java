@@ -30,6 +30,8 @@ public class StringOperation {
 		System.out.println(nameformat1);
 		System.out.println(s6);
 		System.out.println(s7);
+		
+		
 
 	}
 
