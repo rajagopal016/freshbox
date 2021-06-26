@@ -7,7 +7,7 @@ public class AgeException extends Exception {
 		super(s);
 		}
 	
-	public static void main(String[] args) throws AgeException {
+	public static void main(String[] args) {
 		
 		int age = 8;
 		try {
