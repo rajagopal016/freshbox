@@ -3,7 +3,7 @@ package StringBuffer1;
 public class StrBuff {
 
 	public static void main(String[] args) {
-		// 
+		// Append and Insert
 		StringBuffer s8 = new StringBuffer("Hello Everyone");
 		s8.append("!!");
 		StringBuffer s9 = new StringBuffer("Hllo Everyone");
