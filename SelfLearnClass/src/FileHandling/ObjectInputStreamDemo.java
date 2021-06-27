@@ -12,7 +12,7 @@ public class ObjectInputStreamDemo {
 		
 		try {
 			stream = new ObjectInputStream(new FileInputStream("objIO"));
-			System.out.println(stream.readObject());
+			System.out.println((Employee)stream.readObject());
 			
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
@@ -20,7 +20,14 @@ public class ObjectInputStreamDemo {
 		} catch (IOException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		} finally {
+			try {
+				stream.close();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
 		
 		
 
