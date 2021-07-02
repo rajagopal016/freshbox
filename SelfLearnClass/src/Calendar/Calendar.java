@@ -6,6 +6,8 @@ import java.util.GregorianCalendar;
 
 public class Calendar {
 
+	
+
 	public static void main(String[] args) {
 		Date date = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm");
@@ -14,7 +16,7 @@ public class Calendar {
 		System.out.println(date);
 		
 		
-		Calendar calendar = new GregorianCalendar();
+		GregorianCalendar calendar = new GregorianCalendar();
 		int year = calendar.get(Calendar.YEAR);
 		int month = calendar.get(Calendar.MONTH);
 		int dayOfMonth = calendar.get(Calendar.DAY_OF_MONTH);
