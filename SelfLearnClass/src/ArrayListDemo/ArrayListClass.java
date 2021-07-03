@@ -5,7 +5,7 @@ public class ArrayListClass {
 
 	public static void Process() {
 		ArrayList<String> list = new ArrayList<String>();
-		list.add("A");
+		list.add(new String("A"));
 		list.add("B");
 		list.add("C");
 		Iterator itr = list.iterator();
