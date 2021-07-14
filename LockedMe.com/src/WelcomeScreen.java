@@ -96,7 +96,7 @@ public class WelcomeScreen {
 			}  
 			else  {  
 				System.out.println("File already exist at location: "+file.getCanonicalPath() + " | Enter an unique file name");
-				displayAvailableOptions();
+				addNewFile();
 			} 
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
