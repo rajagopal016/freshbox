@@ -78,9 +78,15 @@ public class WelcomeScreen {
 	private void searchFile() {
 		
 	}
+	private String getFileName(String purpose) {
+		System.out.print("Enter file name to " + purpose + " : ");
+		Scanner s = new Scanner(System.in);
+		String fileName = s.nextLine();
+		return fileName;
+	}
 
 	private void addNewFile() {
-		File file = new File(root + "music.txt"); //initialize File object and passing path as argument  
+		File file = new File(root + getFileName("create")); //initialize File object and passing path as argument  
 		boolean result;
 		try {
 			result = file.createNewFile();
