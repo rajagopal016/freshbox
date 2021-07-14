@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.in28minutes</groupId>
+  <artifactId>first-maven-project</artifactId> <!-- group id and artifact id together uniquely identifies a project -->
+  <version>0.0.1-SNAPSHOT</version> <!-- snapshot means it is under dev -->
+  <dependencies>
+  	<dependency>
+  		<groupId>junit</groupId>
+  		<artifactId>junit</artifactId>
+  		<version>4.4</version> <!-- [4.1,4.5] means minimum is 4.1 and max is 4.5 which can be pulled. [4.1,] will pull latest available after 4.1 -->
+  		<scope></scope> <!-- make junit available only for test code compilation - compile, runtime, provided, system are other options -->
+  	</dependency>
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>5.0.6.Final</version>
+		<exclusions>
+			<exclusion> <!-- exclusion is used to omit any transitive dependency -->
+				<groupId>org.jboss.logging</groupId>
+				<artifactId>jboss-logging</artifactId>
+			</exclusion>
+		</exclusions>
+  	</dependency>
+  	
+  </dependencies>
+  <properties> 
+   <maven.compiler.source>1.8</maven.compiler.source>
+   <maven.compiler.target>1.8</maven.compiler.target>
+</properties>
+</project>
+
