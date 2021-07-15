@@ -49,6 +49,7 @@ public class WelcomeScreen {
 		System.out.println("2. Add a new file to the repository");
 		System.out.println("3. Delete a file in the repository");
 		System.out.println("4. Search a file in the repository");
+		System.out.println("5. Exit");
 		try {
 			TimeUnit.SECONDS.sleep(1);
 		} catch (InterruptedException e) {
@@ -61,77 +62,50 @@ public class WelcomeScreen {
 	private void processUserChoice(int choice) {//This function chooses the right function as per the user input
 		switch(choice) {
 			case 1:
-				displayAllFiles();
+				displayFiles display = new displayFiles();
+				display.displayAllFiles();
 				break;
 			case 2:
-				addNewFile();
+				AddFile addFile = new AddFile();
+				addFile.addNewFile();
 				break;
 			case 3:
-				deleteFile();
+				deleteFile deleteFile = new deleteFile();
+				deleteFile.deleteFile();
 				break;
 			case 4:
-				searchFile();
+				searchFile search = new searchFile();
+				search.searchFile();
+				break;	
+			case 5:
+				System.out.println("Bye... See you soon!");
 				break;	
 		}
 	}
 	
-	private void searchFile() {
-		
+	public boolean checkFileExistsAndCaseSensitivity(File filename){
+		File dir = new File("C:\\LockedMeDotCom");
+	    String[] files = dir.list();
+	    String filenameS = filename.getName();
+	    for(String file : files)
+	        if(file.equals(filenameS))
+	            return true;
+	    return false;
 	}
-	private String getFileName(String purpose) {
+	
+	protected String getFileName(String purpose) {
 		System.out.print("Enter file name to " + purpose + " : ");
 		Scanner s = new Scanner(System.in);
 		String fileName = s.nextLine();
 		return fileName;
 	}
 
-	private void addNewFile() {
-		File file = new File(root + getFileName("create")); //initialize File object and passing path as argument  
-		boolean result;
-		try {
-			result = file.createNewFile();
-		
-			if(result){  
-				System.out.println("file created "+file.getCanonicalPath()); //returns the path string  
-			}  
-			else  {  
-				System.out.println("File already exist at location: "+file.getCanonicalPath() + " | Enter an unique file name");
-				addNewFile();
-			} 
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} 
-		     
-	}  
-
-		
-	
-	private void deleteFile() {
-		
-	}
-
-	private void displayAllFiles() {//This function displays all file names sorted
-		System.out.println("Displaying all files");
-		File folder = new File(root);
-		File[] listOfFiles = folder.listFiles();
-		String[] fileNames = new String[listOfFiles.length];
-		for(int i = 0; i < listOfFiles.length; i++) {
-			fileNames[i] = listOfFiles[i].getName();
-		}
-		Arrays.sort(fileNames);
-		for(int i = 0; i < fileNames.length; i++) {
-			System.out.println(fileNames[i]);
-		}
-		
-	}
-
 	public void makeUserChoice() {//This function lets user choose a feature, it has a check if the input is valid
-		System.out.print("Enter 1-4 to perform the operation : ");
+		System.out.print("Enter 1-5 to perform the operation : ");
 		Scanner s = new Scanner(System.in);
 		int userChoice = s.nextInt();
-		if (userChoice < 1 || userChoice > 4) {
-			System.out.println("Valid Choice is 1-4");
+		if (userChoice < 1 || userChoice > 5) {
+			System.out.println("Valid Choice is 1-5");
 			makeUserChoice();
 		}else {
 			System.out.println("Processing your input");
