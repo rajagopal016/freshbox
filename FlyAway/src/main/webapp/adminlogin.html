@@ -6,12 +6,13 @@
 </head>
 <body>
 <h1 style="text-align:center">Admin Login - Enter your details below</h1>
-<form action="adminlogin" method="post">
+<form action="login" method="post">
 	<label for="username">Admin User Name:</label>
-	<input type="text" id="username" name="username"><br><br>
+	<input type="text" id="username" name="username" required><br><br>
 	<label for="password">Admin Password:</label>
-	<input type="text" id="password" name="password"><br><br>
+	<input type="password" id="password" name="password" required><br><br>
 	<input type="submit" value="Login">
+	
 </form>
 </body>
 </html>
