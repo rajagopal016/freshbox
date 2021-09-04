@@ -31,7 +31,7 @@ h2 {
   <label for="destination">Destination:</label>
   <input type="text" id="destination" name="destination" required><br><br>
   <label for="date">Date(DD-MM-YYYY):</label>
-  <input type="date" id="date" name="date" required><br><br>
+  <input type="date" id="date" min="04-09-2021" max="31-12-2021" name="date" required><br><br>
   <label for="numbers">Number of People:</label>
   <input type="number" id="numbers" name="numbers" required><br><br>
   <input type="submit" value="Submit">

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 
@@ -66,6 +67,7 @@ public class BookingController extends HttpServlet {
 	
 	private List<Flight> searchFlight(HttpServletRequest request, HttpServletResponse response)
 		    throws Exception {
+		try {
 		String source = request.getParameter("source");
         String destination = request.getParameter("destination");
         String date = request.getParameter("date");
@@ -78,6 +80,12 @@ public class BookingController extends HttpServlet {
         PrintWriter out = response.getWriter();
         List <Flight> availableFlights = bookingDao.searchTheFlight(source, destination, dayOfWeek, numberOfPassengers);
         return availableFlights;
+		}
+		catch(Exception e) {
+			List <Flight> availableFlights2 = Collections.emptyList();;
+			return availableFlights2;
+		}
+		}
 
 	}
-	}
+	

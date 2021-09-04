@@ -49,7 +49,9 @@ public class UserController extends HttpServlet {
     }
 
     private void register(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException, ParseException {
-        String fullname = request.getParameter("username");
+    	PrintWriter out = response.getWriter();
+    	try {
+    	String fullname = request.getParameter("username");
         String password = request.getParameter("password");
         String username = request.getParameter("userid");
         String email = request.getParameter("email");
@@ -76,11 +78,17 @@ public class UserController extends HttpServlet {
 
         int UserRegistrationStatus = userDao.register(user);
         System.out.println(UserRegistrationStatus);
+        
+        
         if(UserRegistrationStatus > 0) {
             RequestDispatcher dispatcher = request.getRequestDispatcher("register-success.html");
             dispatcher.forward(request, response);
         }else {
-        	PrintWriter out = response.getWriter();
+        	
+        	out.print("Registration Failed");
+        }
+        }
+        catch(Exception e) {
         	out.print("Registration Failed");
         }
         

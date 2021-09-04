@@ -32,7 +32,7 @@
 	<label for="email">Email:</label>
 	<input type="email" id="email" name="email" required><br><br>
 	<label for="mobile">Mobile:</label>
-	<input type="text" id="mobile" name="mobile" required><br><br>
+	<input type="number" id="mobile" name="mobile" required><br><br>
 	<label for="city">City:</label>
 	<input type="text" id="city" name="city" required><br><br>
 	<label for="dob">DOB:</label>

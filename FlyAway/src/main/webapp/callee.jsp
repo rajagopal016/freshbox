@@ -1,35 +1,9 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8" %>
  
-<!-- <html> -->
- 
-<!-- <head> -->
-<!--     <title>Java Code Geeks Snippets - Pass Parameters to other JSP Page</title> -->
-<!-- </head> -->
- 
-<!-- <body> -->
- 
-<!--     This is the callee JSP page. -->
-     
-<%--     param1: <%= request.getParameter("date") %> --%>
-<%--     param2: <%= request.getParameter("number") %> --%>
-<%--     param2: <%= request.getParameter("IdFlight") %> --%>
- 
-<!-- </body> -->
 
-<html>
-<head>
-    <title>Passenger Details</title>
-</head>
 
-<script language="JavaScript">
-    function showInput() {
-        document.getElementById('display').innerHTML = 
-                    document.getElementById("p_name1").value;
-        
-    }
-  </script>
 
-<body BACKGROUND="C:\Documents and Settings\temp-00940\workspace\login\WebContent\background.jpg">      
+<body>      
     <br/><br/><br/><br/><br/>
     <form  action="payment.jsp"  method="post">
         <br>
@@ -91,7 +65,7 @@
 	     <input type="text" name="source" hidden="true" value=<%=request.getParameter("source")%>>
 	     <input type="text" name="destination" hidden="true" value=<%=request.getParameter("destination")%>>
 	     <input type="text" name="costPerHead" hidden="true" value=<%=request.getParameter("costPerHead_" + request.getParameter("flight"))%>>
-	     <input type="submit" onclick="" value="Book">
+	     <input type="submit" value="Book">
         
     
  </form>
