@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+<head>
+<meta charset="UTF-8">
+<title>Product Details</title>
+</head>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+<table>
+	<caption style="text-align:center">Users Database</caption>
+	<tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Mobile</th>
+  	</tr>
+	<tr th:each="data :${users}">
+		<td> <span th:text= "${data.idUsers}"></span></td>
+		<td> <span th:text= "${data.nameUsers}"></span></td>
+		<td> <span th:text= "${data.emailUsers}"></span></td>
+		<td> <span th:text= "${data.mobileUsers}"></span></td>
+	</tr>
+</table>
+</body>
+</html>
