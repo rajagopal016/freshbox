@@ -1,11 +1,26 @@
 package com.simplilearn.phase3.model;
 
-public class EProduct {
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "products")
+public class EProduct {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="idProducts")
 	private int idProducts;
+	@Column(name="nameProducts")
 	private String nameProducts;
+	@Column(name="categoryProducts")
 	private String categoryProducts;
+	@Column(name="priceProducts")
 	private int priceProducts;
+	@Column(name="availabilityProducts")
 	private int availabilityProducts;
 		
 	public EProduct() {

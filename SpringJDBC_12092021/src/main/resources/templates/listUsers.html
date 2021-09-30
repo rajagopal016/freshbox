@@ -1,29 +1,93 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"><head>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-<meta charset="UTF-8">
-<title>Product Details</title>
-</head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
-table, th, td {
-  border:1px solid black;
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
 }
 </style>
+</head>
 <body>
-<table>
-	<caption style="text-align:center">Users Database</caption>
+
+<h1 align="center">Users Database</h1>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Type in a Users to Search.." title="Type in a name">
+
+<table id="myTable">
+	
+	<tr class="header">
+	
 	<tr>
     <th>ID</th>
     <th>Name</th>
     <th>Email</th>
     <th>Mobile</th>
+    
   	</tr>
 	<tr th:each="data :${users}">
 		<td> <span th:text= "${data.idUsers}"></span></td>
 		<td> <span th:text= "${data.nameUsers}"></span></td>
 		<td> <span th:text= "${data.emailUsers}"></span></td>
 		<td> <span th:text= "${data.mobileUsers}"></span></td>
+		
 	</tr>
 </table>
+
+
+
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
 </body>
 </html>
