@@ -23,8 +23,8 @@ public class EProductController {
 	public String listProducts(Model model) {
 		List<EProduct> products = eproductdao.getProducts();
 		model.addAttribute("products", products);
-		//return "listProducts";
-		return "listPurchases";
+		return "listProducts";
+		
 	}
 	
 	@Autowired

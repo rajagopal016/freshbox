@@ -13,6 +13,11 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,9 +28,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.simplilearn.phase3.dao.ProductRepository;
 import com.simplilearn.phase3.dao.UserDAO;
+import com.simplilearn.phase3.dao.UserRepository;
 import com.simplilearn.phase3.model.EProduct;
 import com.simplilearn.phase3.model.User;
+
+import hibernateutil.HibernateMain;
 
 @Controller
 public class UserController{
@@ -53,6 +62,33 @@ public class UserController{
 			}
 					
 			return "index";
+		}
+		
+		@Autowired
+		private UserRepository userRepository;
+		@RequestMapping("/changePassword")
+		public String changePassword(@RequestParam(value="password") String pass, Model model) {
+			//System.out.print(email);
+			
+			
+			try{
+				User admin = userRepository.findById(1).get();
+				admin.setPassUsers(pass);
+				userRepository.save(admin);
+				return "changeSuccess";
+			}catch (Exception e) {
+				
+				return "changeFailed";
+			}
+			
+		}
+		
+		@PostMapping("/changePasswordForm")
+		public String changePasswordForm(Model model) {
+				
+			return "changePasswordForm";
+			
+			
 		}
 		
 	

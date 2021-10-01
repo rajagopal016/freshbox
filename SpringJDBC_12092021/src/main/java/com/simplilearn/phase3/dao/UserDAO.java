@@ -25,6 +25,7 @@ public class UserDAO {
 	
 	@Autowired
 	JdbcTemplate template;
+	private JdbcTemplate jdbcTemplateObject;
 	
 	public List<User> getUsers(){
 		
@@ -33,6 +34,27 @@ public class UserDAO {
 			@Override
 			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
 				User u = new User();
+				u.setIdUsers(rs.getInt(1));
+				u.setNameUsers(rs.getString(2));
+				u.setEmailUsers(rs.getString(3));
+				u.setMobileUsers(rs.getString(4));
+				u.setPassUsers(rs.getString(5));
+				return u;
+			}
+			
+		});
+		
+	}
+	
+	
+	public List<User> changePassword(String pass){
+		String SQL = "UPDATE users SET passUsers = ? WHERE nameUsers = ?";
+		return template.query("UPDATE `users` SET passUsers = :? WHERE nameUsers = `Admin`" , new RowMapper<User>() {
+
+			@Override
+			public User mapRow(ResultSet rs, int rowNum) throws SQLException {
+				User u = new User();
+				
 				u.setIdUsers(rs.getInt(1));
 				u.setNameUsers(rs.getString(2));
 				u.setEmailUsers(rs.getString(3));

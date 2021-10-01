@@ -1,10 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<meta name="viewport" content="width=device-width, initial-scale=1"><!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <head>
-    <title>JavaScript Table Filter Search</title>
+    <title>SportyShoes.com - Purchase Database</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
         h3 span {
@@ -20,72 +18,88 @@
         }
     </style>
 </head>
+
 <body class="mt32">
     <div class="container">
         <h3>
             <span>Purchase Database</span>
-            <input type="search" placeholder="Filter any column..." class="form-control search-input" data-table="customers-list"/>
-        </h3>
-        <table class="table table-striped mt32 customers-list">
+		 </h3>
+		 <p align="right">
+            Filter Date: <input type="date" id="myInput" onchange="myFunction()" placeholder="Filter Date" title="Filter Date">
+            <!--  <input type="text" id="myInput" onkeyup="myFunction2()" placeholder="Filter Category" title="Filter Category"> -->
+            
+				Filter Category:<select name="category"  id="myInput2" onchange="myFunction2()">			
+				<option value=""></option>
+				<option value="Running">Running</option>
+				<option value="Walking">Walking</option>
+				<option value="Cricket">Cricket</option>
+				<option value="Jogging">Jogging</option>
+				<option value="Football">Football</option></select>
+       </p>
+        <table id="myTable" class="table table-striped mt32 customers-list">
             <thead>
                 <tr>
                     <th>Purchase ID</th>
                     <th>Item</th>
                     <th>Cost</th>
-                    <th>User</th>
+                    <th>Customer</th>
                     <th>Date</th>
+                    <th>Category</th>			
                 </tr>
             </thead>
             <tbody>
                 <tr th:each="data :${purchases}">
-					<td> <span th:text= "${data.idProducts}"></span></td>
-					<td> <span th:text= "${data.nameProducts}"></span></td>
-					<td> <span th:text= "${data.categoryProducts}"></span></td>
-					<td> <span th:text= "${data.priceProducts}"></span></td>
-					<td> <span th:text= "${data.availabilityProducts}"></span></td>
+					<td> <span th:text= "${data.idPurchase}"></span></td>
+					<td> <span th:text= "${data.itemPurchase}"></span></td>
+					<td> <span th:text= "${data.costPurchase}"></span></td>
+					<td> <span th:text= "${data.userPurchase}"></span></td>
+					<td> <span th:text= "${data.datePurchase}"></span></td>
+					<td> <span th:text= "${data.categoryPurchase}"></span></td>
 		
 				</tr>
             </tbody>
         </table>
     </div>
-    <script>
-        (function(document) {
-            'use strict';
 
-            var TableFilter = (function(myArray) {
-                var search_input;
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[4];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
 
-                function _onInputSearch(e) {
-                    search_input = e.target;
-                    var tables = document.getElementsByClassName(search_input.getAttribute('data-table'));
-                    myArray.forEach.call(tables, function(table) {
-                        myArray.forEach.call(table.tBodies, function(tbody) {
-                            myArray.forEach.call(tbody.rows, function(row) {
-                                var text_content = row.textContent.toLowerCase();
-                                var search_val = search_input.value.toLowerCase();
-                                row.style.display = text_content.indexOf(search_val) > -1 ? '' : 'none';
-                            });
-                        });
-                    });
-                }
+function myFunction2() {
+	  var input, filter, table, tr, td, i, txtValue;
+	  input = document.getElementById("myInput2");
+	  filter = input.value.toUpperCase();
+	  table = document.getElementById("myTable");
+	  tr = table.getElementsByTagName("tr");
+	  for (i = 0; i < tr.length; i++) {
+	    td = tr[i].getElementsByTagName("td")[5];
+	    if (td) {
+	      txtValue = td.textContent || td.innerText;
+	      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+	        tr[i].style.display = "";
+	      } else {
+	        tr[i].style.display = "none";
+	      }
+	    }       
+	  }
+	}
 
-                return {
-                    init: function() {
-                        var inputs = document.getElementsByClassName('search-input');
-                        myArray.forEach.call(inputs, function(input) {
-                            input.oninput = _onInputSearch;
-                        });
-                    }
-                };
-            })(Array.prototype);
-
-            document.addEventListener('readystatechange', function() {
-                if (document.readyState === 'complete') {
-                    TableFilter.init();
-                }
-            });
-
-        })(document);
-    </script>
+</script>
 </body>
 </html>

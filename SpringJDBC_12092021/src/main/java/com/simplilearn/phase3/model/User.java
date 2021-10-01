@@ -7,16 +7,20 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
+@Entity
+@Table(name = "users")
 public class User {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="idUsers")
 	private int idUsers;
-	
+	@Column(name="nameUsers")
 	private String nameUsers;
-	
+	@Column(name="emailUsers")
 	private String emailUsers;
-	
+	@Column(name="mobileUsers")
 	private String mobileUsers;
-	
+	@Column(name="passUsers")
 	private String passUsers;
 	
 	public User(String nameUsers, String emailUsers, String mobileUsers, String passUsers) {
