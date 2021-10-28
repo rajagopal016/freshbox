@@ -1,0 +1,183 @@
+</html><!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quizizz - Your Personal Quiz Master!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  	//var o=JSON.parse(obj);
+  	//document.log(o);
+  
+  
+  </script>
+  <script type="text/javascript" src="history.json">
+  
+ 	</script>
+ 	
+    <style>
+        .header{
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 10px solid purple;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            border-width: medium;
+            align-content: center;
+            margin-right: 10px;
+            border-style: double;
+        }
+        h4{
+            font-style: italic;
+            font-family: cursive;
+            color: purple;
+            padding-top: 30px;
+            text-align: right;
+            padding-right: 10px;
+                        
+        }
+        .tiles{
+            margin: 5px;
+            padding-top: 10px;
+            border-style: solid;
+            padding: 50px;
+            float: left;   
+            background-size: contain;
+            
+        }
+        a{
+            font-weight: 1000;
+            font-family: monospace;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+        }
+        #QuizTitle{
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+	
+	<div class="header">
+	    <img src="https://cf.quizizz.com/img/quizizz_logos/purple-brandmark-600x164.png" height="45" width="125">    
+	</div>
+	<h4>Your Personal Quiz Master!</h4>
+	<h3 id="QuizTitle">History</h3>
+    <p>This section contains <span id="count"></span> questions and each question has only one right answer</p>
+    <form action="#" onsubmit="return validateFormOnSubmit(this);">
+        <p>Question-1 : <span id="Q1"></span></p>
+        <input required="required" type="radio" id="1_radio_O1" name="RQ1" value="O1">
+        <label for="1_radio_O1" id="1_label_O1"></label><br>
+        <input type="radio" id="1_radio_O2" name="RQ1" value="O2">
+        <label for="1_radio_O2" id="1_label_O2"></label><br>
+        <input type="radio" id="1_radio_O3" name="RQ1" value="O3">
+        <label for="1_radio_O3" id="1_label_O3"></label><br>
+        <input type="radio" id="1_radio_O4" name="RQ1" value="O4">
+        <label for="1_radio_O4" id="1_label_O4"></label><br>
+        <br>
+        <p>Question-2 : <span id="Q2"></span></p>
+        <input required="required" type="radio" id="2_radio_O1" name="RQ2" value="O1">
+        <label for="2_radio_O1" id="2_label_O1"></label><br>
+        <input type="radio" id="2_radio_O2" name="RQ2" value="O2">
+        <label for="2_radio_O2" id="2_label_O2"></label><br>
+        <input type="radio" id="2_radio_O3" name="RQ2" value="O3">
+        <label for="2_radio_O3" id="2_label_O3"></label><br>
+        <input type="radio" id="2_radio_O4" name="RQ2" value="O4">
+        <label for="2_radio_O4" id="2_label_O4"></label><br>
+        <br>
+        <p>Question-3 : <span id="Q3"></span></p>
+        <input required="required" type="radio" id="3_radio_O1" name="RQ3" value="O1">
+        <label for="3_radio_O1" id="3_label_O1"></label><br>
+        <input type="radio" id="3_radio_O2" name="RQ3" value="O2">
+        <label for="3_radio_O2" id="3_label_O2"></label><br>
+        <input type="radio" id="3_radio_O3" name="RQ3" value="O3">
+        <label for="3_radio_O3" id="3_label_O3"></label><br>
+        <input type="radio" id="3_radio_O4" name="RQ3" value="O4">
+        <label for="3_radio_O4" id="3_label_O4"></label><br>
+        <br>
+        <input type="submit" value="Submit Answers" >
+        
+        
+    </form>
+    <script>
+            var mydata = JSON.parse(data);
+            console.log(mydata);
+            document.getElementById("count").innerHTML = mydata.length;
+            document.getElementById("Q1").innerHTML = mydata[0].Q;
+            document.getElementById("1_label_O1").innerHTML = mydata[0].O1;
+            document.getElementById("1_label_O2").innerHTML = mydata[0].O2;
+            document.getElementById("1_label_O3").innerHTML = mydata[0].O3;
+            document.getElementById("1_label_O4").innerHTML = mydata[0].O4;
+            
+            document.getElementById("Q2").innerHTML = mydata[1].Q;
+            document.getElementById("2_label_O1").innerHTML = mydata[1].O1;
+            document.getElementById("2_label_O2").innerHTML = mydata[1].O2;
+            document.getElementById("2_label_O3").innerHTML = mydata[1].O3;
+            document.getElementById("2_label_O4").innerHTML = mydata[1].O4;
+
+            document.getElementById("Q3").innerHTML = mydata[2].Q;
+            document.getElementById("3_label_O1").innerHTML = mydata[2].O1;
+            document.getElementById("3_label_O2").innerHTML = mydata[2].O2;
+            document.getElementById("3_label_O3").innerHTML = mydata[2].O3;
+            document.getElementById("3_label_O4").innerHTML = mydata[2].O4;
+            
+            
+           
+        </script>  
+    <script>
+         function validateFormOnSubmit(theForm) {
+                var mydata = JSON.parse(data);
+                console.log("Hello");
+                console.log(mydata);
+                let a1 = mydata[0].A;
+                let a2 = mydata[1].A;
+                let a3 = mydata[2].A;
+            	let score = 0;
+                if(theForm.RQ1[a1].checked == true)
+                	{
+                		score++;
+                	}
+                if(theForm.RQ2[a2].checked == true)
+	            	{
+	            		score++;
+	            	}
+                if(theForm.RQ3[a3].checked == true)
+	            	{
+	            		score++;
+	            	}
+                console.log("Score is " + score);
+                document.write("History - Review");
+                document.write("<br>");
+                document.write("Question - 1 : " + mydata[0].Q)
+                document.write("<br>");
+                document.write("Answer : " + mydata[0].Ans)
+                document.write("<br>");
+                document.write("<br>");
+                document.write("Question - 2 : " + mydata[1].Q)
+                document.write("<br>");
+                document.write("Answer : " + mydata[1].Ans)
+                document.write("<br>");
+                document.write("<br>");
+                document.write("Question - 3 : " + mydata[2].Q)
+                document.write("<br>");
+                document.write("Answer : " + mydata[2].Ans)
+                document.write("<br>");
+                document.write("<br>");
+                document.write("<br>");
+                document.write("Score is " + score);
+                document.write("<br>");
+                document.write("<br>");
+                document.write("<br>");
+                document.write("<a href='index.html'>Home</a>")
+                return score;
+            }
+    </script>
+ 
+    </body>
+</html>

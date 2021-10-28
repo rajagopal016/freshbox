@@ -1,13 +1,13 @@
-package com.simplilearn.phase3;
+package com.simplilearn.Quizziz;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringJdbc12092021Application {
+public class QuizzizApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringJdbc12092021Application.class, args);
+		SpringApplication.run(QuizzizApplication.class, args);
 	}
 
 }

@@ -1,0 +1,185 @@
+</html><!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quizizz - Your Personal Quiz Master!</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  	//var o=JSON.parse(obj);
+  	//document.log(o);
+  
+  
+  </script>
+  
+ 	
+    <style>
+        .header{
+            margin-left: 10px;
+            margin-top: 10px;
+            border: 10px solid purple;
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-bottom: 10px;
+            border-width: medium;
+            align-content: center;
+            margin-right: 10px;
+            border-style: double;
+        }
+        h4{
+            font-style: italic;
+            font-family: cursive;
+            color: purple;
+            padding-top: 30px;
+            text-align: right;
+            padding-right: 10px;
+                        
+        }
+        .tiles{
+            margin: 5px;
+            padding-top: 10px;
+            border-style: solid;
+            padding: 50px;
+            float: left;   
+            background-size: contain;
+            
+        }
+        a{
+            font-weight: 1000;
+            font-family: monospace;
+            text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+
+        }
+        #QuizTitle{
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+	
+	<div class="header">
+	    <img src="https://cf.quizizz.com/img/quizizz_logos/purple-brandmark-600x164.png" height="45" width="125">    
+	</div>
+	<h4>Your Personal Quiz Master!</h4>
+	<h3 id="QuizTitle">Leaders</h3>
+    <p>This section contains <span id="count"></span> questions and each question has only one right answer</p>
+    
+     <script th:inline="javascript">
+    var quiz = /*[[${obj}]]*/;
+    
+    var mydata = quiz.Q1;
+    
+	</script>
+ </table>
+    
+    <form action="#" onsubmit="return validateFormOnSubmit(this);">
+        <p>Question-1 : <span id="Q1"></span></p>
+        <input required="required" type="radio" id="1_radio_O1" name="RQ1" value="O1">
+        <label for="1_radio_O1" id="1_label_O1"></label><br>
+        <input type="radio" id="1_radio_O2" name="RQ1" value="O2">
+        <label for="1_radio_O2" id="1_label_O2"></label><br>
+        <input type="radio" id="1_radio_O3" name="RQ1" value="O3">
+        <label for="1_radio_O3" id="1_label_O3"></label><br>
+        <input type="radio" id="1_radio_O4" name="RQ1" value="O4">
+        <label for="1_radio_O4" id="1_label_O4"></label><br>
+        <br>
+        <p>Question-2 : <span id="Q2"></span></p>
+        <input required="required" type="radio" id="2_radio_O1" name="RQ2" value="O1">
+        <label for="2_radio_O1" id="2_label_O1"></label><br>
+        <input type="radio" id="2_radio_O2" name="RQ2" value="O2">
+        <label for="2_radio_O2" id="2_label_O2"></label><br>
+        <input type="radio" id="2_radio_O3" name="RQ2" value="O3">
+        <label for="2_radio_O3" id="2_label_O3"></label><br>
+        <input type="radio" id="2_radio_O4" name="RQ2" value="O4">
+        <label for="2_radio_O4" id="2_label_O4"></label><br>
+        <br>
+        <p>Question-3 : <span id="Q3"></span></p>
+        <input required="required" type="radio" id="3_radio_O1" name="RQ3" value="O1">
+        <label for="3_radio_O1" id="3_label_O1"></label><br>
+        <input type="radio" id="3_radio_O2" name="RQ3" value="O2">
+        <label for="3_radio_O2" id="3_label_O2"></label><br>
+        <input type="radio" id="3_radio_O3" name="RQ3" value="O3">
+        <label for="3_radio_O3" id="3_label_O3"></label><br>
+        <input type="radio" id="3_radio_O4" name="RQ3" value="O4">
+        <label for="3_radio_O4" id="3_label_O4"></label><br>
+        <br>
+        <input type="submit" value="Submit Answers">
+        <script th:inline="javascript">
+		    var quiz = /*[[${obj}]]*/;
+		    
+		    var Q1 = quiz.Q1;
+		    
+            document.getElementById("count").innerHTML = mydata.length;
+            document.getElementById("Q1").innerHTML = Q1.Q;
+            document.getElementById("1_label_O1").innerHTML = Q1.O1;
+            document.getElementById("1_label_O2").innerHTML = Q1.O2;
+            document.getElementById("1_label_O3").innerHTML = Q1.O3;
+            document.getElementById("1_label_O4").innerHTML = Q1.O4;
+            var Q2 = quiz.Q2;
+            document.getElementById("Q2").innerHTML = Q2.Q;
+            document.getElementById("2_label_O1").innerHTML = Q2.O1;
+            document.getElementById("2_label_O2").innerHTML = Q2.O2;
+            document.getElementById("2_label_O3").innerHTML = Q2.O3;
+            document.getElementById("2_label_O4").innerHTML = Q2.O4;
+            var Q3 = quiz.Q3;
+            document.getElementById("Q3").innerHTML = Q3.Q;
+            document.getElementById("3_label_O1").innerHTML = Q3.O1;
+            document.getElementById("3_label_O2").innerHTML = Q3.O2;
+            document.getElementById("3_label_O3").innerHTML = Q3.O3;
+            document.getElementById("3_label_O4").innerHTML = Q3.O4;
+            
+            
+            function validateFormOnSubmit(theForm) {
+            	let score = 0;
+                if(theForm.RQ1[Q1.A].checked == true)
+                	{
+                		score++;
+                	}
+                if(theForm.RQ2[Q2.A].checked == true)
+	            	{
+	            		score++;
+	            	}
+                if(theForm.RQ3[Q3.A].checked == true)
+	            	{
+	            		score++;
+	            	}
+                console.log("Score is " + score);
+                document.write("Leaders - Review");
+                document.write("<br>");
+                document.write("<br>");
+                document.write("<br>");
+                document.write("Question - 1 : " + Q1.Q)
+                document.write("<br>");
+                document.write("Answer : " + Q1.Ans)
+                document.write("<br>");
+                document.write("<br>");
+                document.write("Question - 2 : " + Q2.Q)
+                document.write("<br>");
+                document.write("Answer : " + Q2.Ans)
+                document.write("<br>");
+                document.write("<br>");
+                document.write("Question - 3 : " + Q3.Q)
+                document.write("<br>");
+                document.write("Answer : " + Q3.Ans)
+                document.write("<br>");
+                document.write("<br>");
+                document.write("<br>");
+                document.write("Score is " + score);
+                document.write("<br>");
+                document.write("<br>");
+                document.write("<br>");
+                document.write('<a href="index">Home</a>')
+                return score;
+            }
+        </script>
+        
+    </form>
+       
+ 
+    </body>
+</html>

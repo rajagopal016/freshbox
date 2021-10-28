@@ -1,0 +1,13 @@
+{
+  "Q1": {
+    "Q" : "Who is the President of USA?", "O1" : "Trump", "O2" : "Joe Biden", "O3" : "George Bush", "O4" : "Kamala Harris", "A" : "1", "Ans" : "Joe Biden"
+    },
+   "Q2": {
+   "Q" : "Who is the PM of Australia?", "O1" : "Tony Abot", "O2" : "Micheal Philips", "O3" : "Scott Morrison", "O4" : "Joe Biden", "A" : "2", "Ans" : "Scott Morrison"
+  },
+  "Q3":{
+  "Q" : "Who is the President of France?", "O1" : "Angela Merkel", "O2" : "Emmanuel Macron", "O3" : "Modi", "O4" : "Trump", "A" : "1", "Ans" : "Emmanuel Macron"
+  }
+  
+  
+}
