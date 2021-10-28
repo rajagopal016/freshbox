@@ -1,0 +1,9 @@
+
+
+{
+  "Q1": {"Q" : "What is the capital of India?", "O1" : "Delhi", "O2" : "Chennai", "O3" : "Mumbai", "O4" : "Kolkatta", "A" : "0", "Ans" : "Delhi"},
+   "Q2": {"Q" : "What is the capital of Australia?", "O1" : "Melbourne", "O2" : "Sydney", "O3" : "Canberra", "O4" : "Perth", "A" : "2", "Ans" : "Canberra" },
+  "Q3": {"Q" : "What is the capital of France?", "O1" : "Paris", "O2" : "Lyon", "O3" : "Nice", "O4" : "Lille", "A" : "0", "Ans" : "Paris"}
+  
+  
+}

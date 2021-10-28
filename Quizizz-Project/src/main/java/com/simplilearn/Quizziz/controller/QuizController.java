@@ -16,7 +16,6 @@ import com.fasterxml.jackson.databind.util.JSONPObject;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.FileSystems;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
@@ -48,10 +47,11 @@ public class QuizController {
 	
 	
 	@PostMapping("/capitals")
-	public Object startCapitalsQuiz(Model model) throws IOException {
+	public Object startCapitalsQuiz(Model model) {
 		try {
-
-			FileReader reader = new FileReader("C:\\Users\\RKrishna\\eclipse-workspace\\SpringJDBC_12092021 - Copy\\src\\main\\resources\\templates\\data.json");
+			String absolutePath = FileSystems.getDefault().getPath("data.json").normalize().toAbsolutePath().toString();
+			System.out.print(absolutePath);
+			FileReader reader = new FileReader(absolutePath);
 			JSONParser jsonParser = new JSONParser();
 			try {
 				Object obj = jsonParser.parse(reader);

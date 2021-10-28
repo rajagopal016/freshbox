@@ -1,0 +1,8 @@
+
+{
+  "Q1": {"Q" : "What is the tallest animal?", "O1" : "Giraffes", "O2" : "Lion", "O3" : "Pig", "O4" : "Tiger", "A" : "0", "Ans" : "Giraffes"},
+   "Q2": {"Q" : "What is the fastest Animal?", "O1" : "Tiger", "O2" : "Panther", "O3" : "Cheetahs", "O4" : "Tortoise", "A" : "2", "Ans" : "Cheetahs" },
+  "Q3": {"Q" : "What is the laziest Animal?", "O1" : "Tiger", "O2" : "Giant Panda", "O3" : "Lion", "O4" : "koala", "A" : "3", "Ans" : "koala"}
+  
+  
+}

@@ -1,0 +1,8 @@
+
+{
+  "Q1": {"Q" : "Who is the captain of Indian Cricket Team?", "O1" : "Kohli", "O2" : "Dhoni", "O3" : "Rohit", "O4" : "Sachin", "A" : "0", "Ans" : "Kohli"},
+   "Q2": {"Q" : "Who won gold medal for India in 2021 Olympics?", "O1" : "PV Sindu", "O2" : "Neeraj Chopra", "O3" : "Mirabai", "O4" : "Ravi Kumar", "A" : "1", "Ans" : "Neeraj Chopra" },
+  "Q3": {"Q" : "Who won IPL-2021", "O1" : "MI", "O2" : "KKR", "O3" : "RR", "O4" : "CSK", "A" : "3", "Ans" : "CSK"}
+  
+  
+}

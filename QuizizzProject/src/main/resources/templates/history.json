@@ -1,0 +1,8 @@
+
+{
+  "Q1": {"Q" : "Who built Taj Mahal?", "O1" : "Shah Jahan", "O2" : "Akbar", "O3" : "Babar", "O4" : "Rani Lakshmi Bai", "A" : "0", "Ans" : "Shah Jahan"},
+   "Q2": {"Q" : "When did India become Independent?", "O1" : "1999", "O2" : "1857", "O3" : "1945", "O4" : "1947", "A" : "3", "Ans" : "1947" },
+  "Q3": {"Q" : "Who is the first PM of India?", "O1" : "Nehru", "O2" : "Modi", "O3" : "Indira Gandhi", "O4" : "Vajpayee", "A" : "0", "Ans" : "Nehru"}
+  
+  
+}
